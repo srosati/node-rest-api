@@ -1,0 +1,38 @@
+GET http://localhost:3000/users/
+
+###
+
+GET http://localhost:3000/users/1
+
+###
+POST http://localhost:3000/users/
+content-type: application/json
+
+{
+	"username": "test4",
+	"password": "root"
+}
+
+###
+PUT http://localhost:3000/users/1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+
+{
+	"username": "testest",
+	"password": "root"
+}
+
+###
+DELETE http://localhost:3000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+
+
+###
+POST http://localhost:3000/auth/login
+content-type: application/json
+
+{
+	"username": "test1",
+	"password": "root"
+}

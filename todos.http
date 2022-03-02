@@ -1,0 +1,32 @@
+GET http://localhost:3000/todos/
+
+###
+
+GET http://localhost:3000/todos/1
+
+###
+POST http://localhost:3000/todos/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+
+{
+	"description": "This is a test"
+}
+
+###
+PUT http://localhost:3000/todos/1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+
+{
+	"description": "This is a test",
+	"completed": false
+}
+
+
+###
+DELETE http://localhost:3000/todos/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+
+
+

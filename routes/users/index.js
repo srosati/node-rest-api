@@ -1,16 +1,16 @@
 import { Router } from 'express';
-import User from '../../db/users.js';
+import User from '../../models/users.js';
 import { isSameUser, parseId, transformUser } from './utils.js';
 
 const router = Router();
 
 router.get('/', async (_, res) => {
-	const users = await User.list();
+	const users = await User.find();
 	res.json(users.map(transformUser));
 });
 
 router.get('/:id', parseId, async (req, res) => {
-	const user = await User.get(req.userId);
+	const user = await User.findById(req.userId);
 	if (user == null) return res.sendStatus(404);
 	res.json(transformUser(user));
 });
@@ -18,7 +18,7 @@ router.get('/:id', parseId, async (req, res) => {
 router.post('/', async (req, res) => {
 	const { username, password } = req.body;
 	try {
-		const { id } = await User.add({ username, password });
+		const { id } = await User.create({ username, password });
 		res.setHeader('Location', `${process.env.BASE_URL}/users/${id}`);
 		res.sendStatus(200);
 	} catch (e) {
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', isSameUser, async (req, res) => {
 	const { username, password } = req.body;
 	try {
-		const user = await User.edit(req.userId, username, password);
+		const user = await User.edit(req.userId, { username, password });
 		if (user == null) return res.sendStatus(404);
 
 		res.json(transformUser(user));

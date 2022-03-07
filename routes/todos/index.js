@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { authenticated } from '../../auth/utils.js';
-import Todo from '../../db/todos.js';
+import Todo from '../../models/todos.js';
 import { getTodo, isTodoOwner, transformTodo } from './utils.js';
 
 const router = Router();

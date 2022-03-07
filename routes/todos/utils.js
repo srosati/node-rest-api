@@ -1,5 +1,5 @@
 import { isUser } from '../../auth/utils.js';
-import Todo from '../../db/todos.js';
+import Todo from '../../models/todos.js';
 
 export function parseId(req, res, next) {
 	const id = parseInt(req.params.id);

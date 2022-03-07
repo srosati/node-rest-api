@@ -8,6 +8,7 @@ router.post('/login', async (req, res) => {
 		const token = await login(req, res);
 		res.send(token);
 	} catch (e) {
+		console.log(e);
 		res.sendStatus(401);
 	}
 });

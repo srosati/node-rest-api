@@ -1,9 +1,7 @@
 import { isUser } from '../../auth/utils.js';
 
-export function parseId(req, res, next) {
-	const id = parseInt(req.params.id);
-	if (isNaN(id)) return res.sendStatus(404);
-	req.userId = id;
+export function parseId(req, _, next) {
+	req.userId = req.params.id;
 	next();
 }
 

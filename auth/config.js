@@ -1,7 +1,8 @@
 import passport from 'passport';
+import { compare } from 'bcrypt';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
-import User from '../db/users.js';
+import User from '../models/users.js';
 
 const validateToken = new JwtStrategy(
 	{
@@ -9,7 +10,7 @@ const validateToken = new JwtStrategy(
 		secretOrKey: process.env.JWT_SECRET_KEY
 	},
 	async (jwtPayload, done) => {
-		const user = await User.get(jwtPayload.id);
+		const user = await User.findById(jwtPayload.id);
 		if (user == null) return done(null, false);
 
 		return done(null, user);
@@ -22,11 +23,12 @@ const login = new LocalStrategy(
 		passwordField: 'password'
 	},
 	async (username, password, callback) => {
-		const user = await User.getByUsername(username);
+		const user = await User.findByUsername(username);
 		if (user == null)
 			return callback(null, false, { message: 'User not found' });
-		if (user.password !== password)
-			return callback(null, false, { message: 'Incorrect password' });
+
+		const match = await compare(user.password, password);
+		if (match) return callback(null, false, { message: 'Incorrect password' });
 
 		return callback(null, user);
 	}

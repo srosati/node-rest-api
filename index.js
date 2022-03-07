@@ -1,5 +1,6 @@
 import 'dotenv/config';
-import './auth/index.js';
+import './auth/config.js';
+import './db/config.js';
 import express from 'express';
 import todoRouter from './routes/todos/index.js';
 import userRouter from './routes/users/index.js';

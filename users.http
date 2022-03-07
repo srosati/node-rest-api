@@ -2,21 +2,21 @@ GET http://localhost:3000/users/
 
 ###
 
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/622613eee80a760bb695e9a2
 
 ###
 POST http://localhost:3000/users/
 content-type: application/json
 
 {
-	"username": "test4",
+	"username": "test",
 	"password": "root"
 }
 
 ###
-PUT http://localhost:3000/users/1
+PUT http://localhost:3000/users/622613eee80a760bb695e9a2
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZTgwYTc2MGJiNjk1ZTlhMiIsImlhdCI6MTY0NjY2NDQ2M30.hJTz6-AWT9lDRc88LkN-gx90h7vgMeV_p0D4Tsym_sk
 
 {
 	"username": "testest",
@@ -25,7 +25,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxN
 
 ###
 DELETE http://localhost:3000/users/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZTgwYTc2MGJiNjk1ZTlhMiIsImlhdCI6MTY0NjY2NDE0OX0.mJYGlYFc1H5px2p607W9zV-ilstjdqZ1-EA_hKYZBo0
 
 
 ###
@@ -33,6 +33,6 @@ POST http://localhost:3000/auth/login
 content-type: application/json
 
 {
-	"username": "test1",
+	"username": "test",
 	"password": "root"
 }

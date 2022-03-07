@@ -1,16 +1,14 @@
 import { isUser } from '../../auth/utils.js';
 import Todo from '../../models/todos.js';
 
-export function parseId(req, res, next) {
-	const id = parseInt(req.params.id);
-	if (isNaN(id)) return res.sendStatus(404);
-	req.todoId = id;
+export function parseId(req, _, next) {
+	req.todoId = req.params.id;
 	next();
 }
 
 export function getTodo(req, res, next) {
 	parseId(req, res, async () => {
-		const todo = await Todo.get(req.todoId);
+		const todo = await Todo.findById(req.todoId);
 		if (todo == null) return res.sendStatus(404);
 		req.todo = todo;
 		await next();

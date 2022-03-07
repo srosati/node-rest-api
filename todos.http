@@ -2,31 +2,31 @@ GET http://localhost:3000/todos/
 
 ###
 
-GET http://localhost:3000/todos/1
+GET http://localhost:3000/todos/6226207c8c8361f4ebf3996a
 
 ###
 POST http://localhost:3000/todos/
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxZWNhY2I4NDYwY2FjODNiOTVkNiIsImlhdCI6MTY0NjY2NTgyNn0.LwmcpeO8GUyLe-HdmqpbpClsHufhIxGt4SF3xjU-5XQ
 
 {
 	"description": "This is a test"
 }
 
 ###
-PUT http://localhost:3000/todos/1
+PUT http://localhost:3000/todos/6226207c8c8361f4ebf3996a
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxZWNhY2I4NDYwY2FjODNiOTVkNiIsImlhdCI6MTY0NjY2NTgyNn0.LwmcpeO8GUyLe-HdmqpbpClsHufhIxGt4SF3xjU-5XQ
 
 {
-	"description": "This is a test",
-	"completed": false
+	"description": "Editing test",
+	"completed": true
 }
 
 
 ###
-DELETE http://localhost:3000/todos/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ2MjQ0NzQwfQ.DzeawHZbXEwW5s2OL68DNRa1mHvABNSPcBHwxIicjF8
+DELETE http://localhost:3000/todos/6226207c8c8361f4ebf3996a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxZWNhY2I4NDYwY2FjODNiOTVkNiIsImlhdCI6MTY0NjY2NTgyNn0.LwmcpeO8GUyLe-HdmqpbpClsHufhIxGt4SF3xjU-5XQ
 
 
 

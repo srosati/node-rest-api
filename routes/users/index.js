@@ -43,7 +43,7 @@ router.put('/:id', isSameUser, async (req, res) => {
 });
 
 router.delete('/:id', isSameUser, async (req, res) => {
-	const removed = await User.remove(req.userId);
+	const removed = await User.findByIdAndDelete(req.userId);
 	if (!removed) return res.sendStatus(404);
 	res.sendStatus(200);
 });

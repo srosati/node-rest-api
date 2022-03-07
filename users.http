@@ -24,8 +24,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZ
 }
 
 ###
-DELETE http://localhost:3000/users/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZTgwYTc2MGJiNjk1ZTlhMiIsImlhdCI6MTY0NjY2NDE0OX0.mJYGlYFc1H5px2p607W9zV-ilstjdqZ1-EA_hKYZBo0
+DELETE http://localhost:3000/users/622613eee80a760bb695e9a2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZTgwYTc2MGJiNjk1ZTlhMiIsImlhdCI6MTY0NjY2NTM5MH0.dAxJaMnhraMvPT9OyxFYTzwzfdNbmCV2msUkGCS-LNw
 
 
 ###

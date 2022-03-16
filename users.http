@@ -2,21 +2,11 @@ GET http://localhost:3000/users/
 
 ###
 
-GET http://localhost:3000/users/622613eee80a760bb695e9a2
+GET http://localhost:3000/users/62261ecacb8460cac83b95d6
 
 ###
 POST http://localhost:3000/users/
 content-type: application/json
-
-{
-	"username": "test",
-	"password": "root"
-}
-
-###
-PUT http://localhost:3000/users/622613eee80a760bb695e9a2
-content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZTgwYTc2MGJiNjk1ZTlhMiIsImlhdCI6MTY0NjY2NDQ2M30.hJTz6-AWT9lDRc88LkN-gx90h7vgMeV_p0D4Tsym_sk
 
 {
 	"username": "testest",
@@ -24,8 +14,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZ
 }
 
 ###
-DELETE http://localhost:3000/users/622613eee80a760bb695e9a2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxM2VlZTgwYTc2MGJiNjk1ZTlhMiIsImlhdCI6MTY0NjY2NTM5MH0.dAxJaMnhraMvPT9OyxFYTzwzfdNbmCV2msUkGCS-LNw
+PUT http://localhost:3000/users/623220a74d391f57787d52b4
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjYxZWNhY2I4NDYwY2FjODNiOTVkNiIsImlhdCI6MTY0NjY2NTgyNn0.LwmcpeO8GUyLe-HdmqpbpClsHufhIxGt4SF3xjU-5XQ
+
+{
+	"username": "test",
+	"password": "root"
+}
+
+###
+DELETE http://localhost:3000/users/6232228a3363333a93e725c9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzIyMjhhMzM2MzMzM2E5M2U3MjVjOSIsImlhdCI6MTY0NzQ1MjgyMH0.Uk2d2HqPS_FxBVzVla-w7HAS-ngoITWYquCxekfFUXo
 
 
 ###
@@ -33,6 +33,6 @@ POST http://localhost:3000/auth/login
 content-type: application/json
 
 {
-	"username": "test",
+	"username": "testest",
 	"password": "root"
 }

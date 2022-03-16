@@ -1,49 +1,26 @@
 import { Router } from 'express';
 import { authenticated } from '../../auth/utils.js';
-import Todo from '../../models/todos.js';
-import { getTodo, isTodoOwner, transformTodo } from './utils.js';
+import { create, edit, findById, list, remove } from './controller.js';
+import { getTodo, isTodoOwner } from './utils.js';
 
 const router = Router();
 
-router.get('/', async (_, res) => {
-	const todos = await Todo.find();
-	res.json(todos.map(transformTodo));
-});
+// List all TODOs
+router.get('/', list);
 
-router.get('/:id', getTodo, (req, res) => {
-	res.json(transformTodo(req.todo));
-});
+// Get todo of id id
+router.get('/:id', getTodo, findById);
 
-router.post('/', authenticated, async (req, res) => {
-	const { description } = req.body;
-	try {
-		console.log(req.user);
-		const { id } = await Todo.create({ owner: req.user._id, description });
-		res.setHeader('Location', `${process.env.BASE_URL}/todos/${id}`);
-		res.sendStatus(201);
-	} catch (e) {
-		res.status(400);
-		res.send(e.toString());
-	}
-});
+// Create TODO
+// Must be authenticated
+router.post('/', authenticated, create);
 
-router.put('/:id', isTodoOwner, async (req, res) => {
-	const { description, completed } = req.body;
-	try {
-		const todo = await Todo.edit(req.todoId, { description, completed });
-		if (todo == null) return res.sendStatus(404);
+// Edit todo of id id
+// Must be authenticated as todo owner
+router.put('/:id', isTodoOwner, edit);
 
-		res.json(transformTodo(todo));
-	} catch (e) {
-		res.status(400);
-		res.send(e.toString());
-	}
-});
-
-router.delete('/:id', isTodoOwner, async (req, res) => {
-	let removed = await Todo.findByIdAndDelete(req.todoId);
-	if (!removed) return res.sendStatus(404);
-	res.sendStatus(200);
-});
+// Delete todo of id id
+// Must be authenticated as todo owner
+router.delete('/:id', isTodoOwner, remove);
 
 export default router;

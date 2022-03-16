@@ -1,5 +1,3 @@
-// NOTE: methods here should be async and actually call whatever database is being used
-
 import mongoose from 'mongoose';
 
 const TodoSchema = new mongoose.Schema({

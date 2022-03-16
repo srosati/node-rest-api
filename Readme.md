@@ -1,6 +1,11 @@
-**Example REST api in nodejs using express, mongoose and passport (with JWT)**
+## Example REST api in nodejs using express, mongoose and passport (with JWT)
 
-Provided endpints are
+### Run
+
+1. ensure mongodb database is running and add its url at .env file
+2. run npm start to start api
+
+### Provided endpints
 
 GET /todos => list todos
 
@@ -24,11 +29,14 @@ DELETE /users/:id => delete user of id
 
 POST /auth/login => login with username and password
 
-Should be easily modifiable to change database or authentication method as it is separated in mostly independent modules
+### Notes
 
-.http files are for example usage (see vscode Rest client extension for how this works)
-.env file provided on repo to provide example of enviroment variables
+- Should be easily modifiable to change database or authentication method as it is separated in mostly independent modules
+- .http files are for example usage (see vscode Rest client extension for how this works)
+- .env file provided on repo to provide example of enviroment variables
 
-**Future extensions:**
+### Future extensions:
+
 - Better validation
-- Logging
+- Propper logging
+- Port over to TypeScript
